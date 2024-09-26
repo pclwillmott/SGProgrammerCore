@@ -1,0 +1,24 @@
+{
+  "originHash" : "17887e34c9530abf3d399663b11e987ee198b6b4636a50251c2ef7e123a323a8",
+  "pins" : [
+    {
+      "identity" : "sginteger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pclwillmott/SGInteger",
+      "state" : {
+        "revision" : "bc2b2ac6213c74cc6a13d5018e2340f6e116861a",
+        "version" : "0.0.6"
+      }
+    },
+    {
+      "identity" : "sgunitconversion",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pclwillmott/SGUnitConversion",
+      "state" : {
+        "revision" : "e838bae513d695d92b3fd9b809e0cfe83c1b19cd",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}
