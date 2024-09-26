@@ -45,7 +45,7 @@ public typealias PTSettingsPropertyLayoutRule = (
   capability     : Set<DecoderCapability>
 )
 
-public enum PTLayoutRuleTestType {
+public enum PTLayoutRuleTestType : Sendable {
   
   // MARK: Enumeration
   
@@ -54,7 +54,7 @@ public enum PTLayoutRuleTestType {
   
 }
 
-public enum PTLayoutRuleActionType {
+public enum PTLayoutRuleActionType : Sendable {
   
   // MARK: Enumeration
   
@@ -63,7 +63,7 @@ public enum PTLayoutRuleActionType {
   
 }
 
-public enum PTLayoutRuleOperator {
+public enum PTLayoutRuleOperator : Sendable {
   
   // MARK: Enumeration
   

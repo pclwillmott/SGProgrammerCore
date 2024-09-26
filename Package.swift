@@ -15,7 +15,9 @@ let package = Package(
     ],
     dependencies: [
       .package(url: "https://github.com/pclwillmott/SGUnitConversion", .upToNextMajor(from: "0.0.5")),
-      .package(url: "https://github.com/pclwillmott/SGInteger", .upToNextMajor(from: "0.0.4")),    ],
+      .package(url: "https://github.com/pclwillmott/SGInteger", .upToNextMajor(from: "0.0.4")),
+      .package(url: "https://github.com/pclwillmott/SGAppKit", .upToNextMajor(from: "0.0.1")),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -24,6 +26,7 @@ let package = Package(
             dependencies: [
               .product(name: "SGInteger", package: "SGInteger"),
               .product(name: "SGUnitConversion", package: "SGUnitConversion"),
+              .product(name: "SGAppKit", package: "SGAppKit"),
           ]),
         .testTarget(
             name: "SGProgrammerCoreTests",

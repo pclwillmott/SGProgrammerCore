@@ -32,6 +32,7 @@
 
 import Foundation
 import AppKit
+import SGAppKit
 
 public enum DecoderType : UInt64, Codable, CaseIterable, Sendable {
   

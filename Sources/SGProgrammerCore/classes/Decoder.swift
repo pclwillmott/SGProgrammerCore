@@ -33,8 +33,9 @@
 import Foundation
 import SGUnitConversion
 import SGInteger
+import SGAppKit
 
-private enum IdentifyDecoderState {
+private enum IdentifyDecoderState : Sendable {
   case idle
   case getManufacturer
   case getESUProductId
@@ -915,7 +916,7 @@ public class Decoder : NSObject {
   
   @MainActor public func getInfo(property:ProgrammerToolSettingsProperty, definition:ProgrammerToolSettingsPropertyDefinition? = nil) -> String {
 
-    guard let definition = definition ?? ProgrammerToolSettingsProperty.definitions[property], definition.infoType != .none, let maximumFractionDigits = definition.infoMaxDecimalPlaces, let infoFactor = definition.infoFactor, let appNode else {
+    guard let definition = definition ?? ProgrammerToolSettingsProperty.definitions[property], definition.infoType != .none, let maximumFractionDigits = definition.infoMaxDecimalPlaces, let infoFactor = definition.infoFactor /*, let appNode */ else {
       return ""
     }
 
@@ -949,11 +950,13 @@ public class Decoder : NSObject {
     case .decibel:
       doubleValue = (Double(values[0]) - 16.0) * infoFactor
       symbol = String(localized:"dB")
-    case .frequency:
+/*    case .frequency:
       doubleValue = SGUnitFrequency.convert(fromValue: doubleValue, fromUnits: .hertz, toUnits: appNode.unitsFrequency)
       symbol = appNode.unitsFrequency.symbol
+ */
     case .percentage:
       symbol = String(localized:"%")
+      /*
     case .temperature:
       doubleValue = SGUnitTemperature.convert(fromValue: doubleValue, fromUnits: .celsius, toUnits: appNode.unitsTemperature)
       symbol = appNode.unitsTemperature.symbol
@@ -962,7 +965,7 @@ public class Decoder : NSObject {
       symbol = appNode.unitsTime.symbol
     case .voltage:
       doubleValue = SGUnitVoltage.convert(fromValue: doubleValue, fromUnits: .volts, toUnits: appNode.unitsVoltage)
-      symbol = appNode.unitsVoltage.symbol
+      symbol = appNode.unitsVoltage.symbol */
     case .esuFunctionCategory:
       return ESUFunctionIconCategory(rawValue: values[0])!.title
 

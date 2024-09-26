@@ -32,6 +32,7 @@
 
 import Foundation
 import AppKit
+import SGAppKit
 
 public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
   
@@ -83,9 +84,10 @@ public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
 
   }
   
-  public var button : NSButton {
+  @available(macOS 13.0, *)
+  @MainActor public var button : NSButton {
     
-    let icons : [ProgrammerToolSettingsGroup:MyIcon] = [
+    let icons : [ProgrammerToolSettingsGroup:SGIcon] = [
       .info : .info,
       .address : .envelope,
       .analogSettings : .speedometer,
@@ -104,7 +106,6 @@ public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
       .soundSlotSettings : .speaker,
       .manualCVInput : .wrench,
     ]
-    
     
     let button = icons[self]!.button(target: nil, action: nil)!
     button.toolTip = title

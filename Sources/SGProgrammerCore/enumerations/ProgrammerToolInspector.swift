@@ -32,6 +32,7 @@
 
 import Foundation
 import AppKit
+import SGAppKit
 
 public enum ProgrammerToolInspector : Int, CaseIterable, Sendable {
   
@@ -59,9 +60,9 @@ public enum ProgrammerToolInspector : Int, CaseIterable, Sendable {
     
   }
   
-  public var button : NSButton {
+  @MainActor public var button : NSButton {
     
-    let icons : [ProgrammerToolInspector:MyIcon] = [
+    let icons : [ProgrammerToolInspector:SGIcon] = [
       .quickHelp  : .help,
       .settings   : .gear,
       .rwCVs      : .wrench,
@@ -77,13 +78,19 @@ public enum ProgrammerToolInspector : Int, CaseIterable, Sendable {
       .changedCVs : String(localized: "Show Changed CVs Inspector"),
     ]
     
-    let button = icons[self]!.button(target: nil, action: nil)!
-    button.toolTip = tooltip[self]!
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.isBordered = false
-    button.tag = self.rawValue
+    var button : NSButton?
     
-    return button
+    if #available(macOS 13.0, *) {
+      button = icons[self]!.button(target: nil, action: nil)!
+    } else {
+      // fallback
+    }
+    button?.toolTip = tooltip[self]!
+    button?.translatesAutoresizingMaskIntoConstraints = false
+    button?.isBordered = false
+    button?.tag = self.rawValue
+    
+    return button!
     
   }
   

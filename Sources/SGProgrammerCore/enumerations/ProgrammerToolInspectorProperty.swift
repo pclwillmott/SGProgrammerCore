@@ -32,6 +32,7 @@
 
 import Foundation
 import AppKit
+import SGAppKit
 
 public enum ProgrammerToolInspectorProperty : Int, CaseIterable, Sendable {
   
@@ -54,6 +55,8 @@ public enum ProgrammerToolInspectorProperty : Int, CaseIterable, Sendable {
   /// This will cause a runtime error if the lookup is not defined - this is the intent!
   public var label : String {
 
+    return ""
+    /*
     guard let appNode else {
       return ""
     }
@@ -66,6 +69,7 @@ public enum ProgrammerToolInspectorProperty : Int, CaseIterable, Sendable {
     result = result.replacingOccurrences(of: "%%UNITS_SCALE_SPEED%%", with: appNode.unitsScaleSpeed.symbol)
     result = result.replacingOccurrences(of: "%%UNITS_TIME%%", with: appNode.unitsTime.symbol)
     return result
+     */
   }
   
   /// This will cause a runtime error if the lookup is not defined - this is the intent!
@@ -192,7 +196,7 @@ public enum ProgrammerToolInspectorProperty : Int, CaseIterable, Sendable {
         checkBox.title = item.label
         field.control = checkBox
       case .comboBox:
-        let comboBox = MyComboBox()
+        let comboBox = SGComboBox()
         comboBox.isEditable = false
         field.control = comboBox
   //      initComboBox(property: field.property, comboBox: comboBox)

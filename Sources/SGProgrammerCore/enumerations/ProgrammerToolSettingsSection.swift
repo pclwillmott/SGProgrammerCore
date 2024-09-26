@@ -528,7 +528,7 @@ public enum ProgrammerToolSettingsSection : Int, CaseIterable, Sendable {
     
   }
   
-  public static var inspectorSectionSeparators : [ProgrammerToolSettingsSection:ProgrammerToolSettingsSectionField] {
+  @MainActor public static var inspectorSectionSeparators : [ProgrammerToolSettingsSection:ProgrammerToolSettingsSectionField] {
     
     var constraints : [NSLayoutConstraint] = []
 

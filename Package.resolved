@@ -1,6 +1,15 @@
 {
-  "originHash" : "17887e34c9530abf3d399663b11e987ee198b6b4636a50251c2ef7e123a323a8",
+  "originHash" : "5959ec6aae0b58aa82d6f1f96b545d8cef14567410aaa28dc062cb3354f0cc15",
   "pins" : [
+    {
+      "identity" : "sgappkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pclwillmott/SGAppKit",
+      "state" : {
+        "revision" : "c3bf9623e6f16fcae0ebf3099564545df851fbf5",
+        "version" : "0.0.6"
+      }
+    },
     {
       "identity" : "sginteger",
       "kind" : "remoteSourceControl",

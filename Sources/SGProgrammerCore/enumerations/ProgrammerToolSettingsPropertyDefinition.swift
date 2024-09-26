@@ -49,7 +49,7 @@ public typealias ProgrammerToolSettingsPropertyDefinition = (
   requiredCapabilities : Set<DecoderCapability>
 )
 
-public enum ProgrammerToolInfoType : CaseIterable {
+public enum ProgrammerToolInfoType : CaseIterable, Sendable {
   
   // MARK: Enumeration
   
@@ -66,7 +66,7 @@ public enum ProgrammerToolInfoType : CaseIterable {
   
 }
 
-public enum ProgrammerToolEncodingType : Int, CaseIterable {
+public enum ProgrammerToolEncodingType : Int, CaseIterable, Sendable {
   
   // MARK: Enumeration
 
@@ -126,7 +126,7 @@ public enum ProgrammerToolEncodingType : Int, CaseIterable {
   case esuBrakingMode
 }
 
-public enum CVIndexingMethod {
+public enum CVIndexingMethod : Sendable {
   
   // MARK: Enumeration
   

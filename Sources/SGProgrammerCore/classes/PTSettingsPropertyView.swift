@@ -32,6 +32,7 @@
 
 import Foundation
 import AppKit
+import SGAppKit
 
 public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
 
@@ -43,7 +44,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
     
     viewConstraints.removeAll()
     
-    self.subviews.removeAll()
+//    self.subviews.removeAll()
     
     cvLabel = nil
     
@@ -83,7 +84,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
   
   private var checkBox : NSButton?
   
-  private var comboBox : MyComboBox?
+  private var comboBox : SGComboBox?
   
   private var textField : NSTextField?
   
@@ -289,7 +290,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
         
         if definition.controlType == .warning {
           
-          image = NSImageView(image: MyIcon.warning.image!)
+          image = NSImageView(image: SGIcon.warning.image!)
           
           if let image {
             
@@ -351,7 +352,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
       
     case .comboBox, .comboBoxDynamic:
       
-      comboBox = MyComboBox()
+      comboBox = SGComboBox()
 
       if let comboBox, let label {
         
@@ -1020,7 +1021,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
       
       switch definition.controlType {
       case .checkBox:
-        checkBox!.boolValue = value == "true"
+        checkBox!.state = value == "true" ? .on : .off
       case .comboBoxDynamic:
         initComboBoxDynamic()
         fallthrough
@@ -1090,7 +1091,7 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
     decoder?.setValue(property: property, string: sender.state == .on ? "true" : "false", definition: definition)
   }
   
-  @objc func comboBoxAction(_ sender:MyComboBox) {
+  @objc func comboBoxAction(_ sender:SGComboBox) {
     if let string = sender.objectValueOfSelectedItem as? String {
       decoder?.setValue(property: property, string: string, definition: definition)
     }
