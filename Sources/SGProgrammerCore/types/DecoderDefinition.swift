@@ -34,17 +34,30 @@
 
 import Foundation
 
-public struct DecoderDefinition : Codable {
+public struct DecoderDefinition : Codable, Sendable {
   
-  var decoderType        : DecoderType
-  var firmwareVersion    : [[Int]]
-  var esuProductIds      : [UInt32]
-  var cvs                : [CV]
-  var defaultValues      : [UInt8]
-  var mapping            : [Int:Set<CV>]
-  var properties         : Set<ProgrammerToolSettingsProperty>
-  var esuPhysicalOutputs : Set<ESUDecoderPhysicalOutput>
-  var offsetMethod       : ESUPhysicalOutputCVIndexOffsetMethod
-  var esuOutputModes     : [ESUDecoderPhysicalOutput:Set<ESUPhysicalOutputMode>]
+  public var decoderType        : DecoderType
+  public var firmwareVersion    : [[Int]]
+  public var esuProductIds      : [UInt32]
+  public var cvs                : [CV]
+  public var defaultValues      : [UInt8]
+  public var mapping            : [Int:Set<CV>]
+  public var properties         : Set<ProgrammerToolSettingsProperty>
+  public var esuPhysicalOutputs : Set<ESUDecoderPhysicalOutput>
+  public var offsetMethod       : ESUPhysicalOutputCVIndexOffsetMethod
+  public var esuOutputModes     : [ESUDecoderPhysicalOutput:Set<ESUPhysicalOutputMode>]
+  
+  public init(decoderType: DecoderType, firmwareVersion: [[Int]], esuProductIds: [UInt32], cvs: [CV], defaultValues: [UInt8], mapping: [Int : Set<CV>], properties: Set<ProgrammerToolSettingsProperty>, esuPhysicalOutputs: Set<ESUDecoderPhysicalOutput>, offsetMethod: ESUPhysicalOutputCVIndexOffsetMethod, esuOutputModes: [ESUDecoderPhysicalOutput : Set<ESUPhysicalOutputMode>]) {
+    self.decoderType = decoderType
+    self.firmwareVersion = firmwareVersion
+    self.esuProductIds = esuProductIds
+    self.cvs = cvs
+    self.defaultValues = defaultValues
+    self.mapping = mapping
+    self.properties = properties
+    self.esuPhysicalOutputs = esuPhysicalOutputs
+    self.offsetMethod = offsetMethod
+    self.esuOutputModes = esuOutputModes
+  }
   
 }
