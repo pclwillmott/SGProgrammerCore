@@ -44,7 +44,7 @@ public enum ESUMarklinConsecutiveAddresses : UInt8, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUMarklinConsecutiveAddresses.allCases {
       if temp.title == title {
         self = temp

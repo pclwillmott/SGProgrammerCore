@@ -42,7 +42,7 @@ public enum ESUDCMotorPWMFrequency : UInt8, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUDCMotorPWMFrequency.allCases {
       if temp.title == title {
         self = temp

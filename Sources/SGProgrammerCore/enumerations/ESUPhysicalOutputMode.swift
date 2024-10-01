@@ -93,7 +93,7 @@ public enum ESUPhysicalOutputMode : UInt8, CaseIterable, Codable, Sendable {
 
   // MARK: Constructors
   
-  @MainActor init?(title:String, decoder:Decoder) {
+  @MainActor public init?(title:String, decoder:Decoder) {
     
     if let lookup = ESUPhysicalOutputMode.valueLookup[decoder.esuPhysicalOutputCVIndexOffsetMethod] {
       
@@ -110,7 +110,7 @@ public enum ESUPhysicalOutputMode : UInt8, CaseIterable, Codable, Sendable {
     
   }
 
-  init?(value:UInt8, decoder:Decoder) {
+  public init?(value:UInt8, decoder:Decoder) {
     
     if let lookup = ESUPhysicalOutputMode.valueLookup[decoder.esuPhysicalOutputCVIndexOffsetMethod] {
       for (key, tempValue) in lookup {

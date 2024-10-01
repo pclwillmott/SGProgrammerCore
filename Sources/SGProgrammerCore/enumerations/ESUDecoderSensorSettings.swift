@@ -42,7 +42,7 @@ public enum ESUDecoderSensorSettings : UInt8, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUDecoderSensorSettings.allCases {
       if temp.title == title {
         self = temp

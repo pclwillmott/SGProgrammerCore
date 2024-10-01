@@ -75,7 +75,7 @@ public enum ESUSoundSlot : Int, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUSoundSlot.allCases {
       if temp.title == title {
         self = temp

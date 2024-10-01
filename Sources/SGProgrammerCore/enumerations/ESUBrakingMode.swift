@@ -42,7 +42,7 @@ public enum ESUBrakingMode : UInt8, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUBrakingMode.allCases {
       if temp.title == title {
         self = temp

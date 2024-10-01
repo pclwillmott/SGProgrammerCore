@@ -112,7 +112,7 @@ public enum ESUFunctionMapping : Int, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUFunctionMapping.allCases {
       if temp.title == title {
         self = temp

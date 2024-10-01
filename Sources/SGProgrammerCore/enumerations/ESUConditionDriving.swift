@@ -43,7 +43,7 @@ public enum ESUConditionDriving : UInt8, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUConditionDriving.allCases {
       if temp.title == title {
         self = temp

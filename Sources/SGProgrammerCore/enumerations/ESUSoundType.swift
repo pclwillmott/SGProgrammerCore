@@ -45,7 +45,7 @@ public enum ESUSoundType : Int, CaseIterable, Sendable {
   
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUSoundType.allCases {
       if temp.title == title {
         self = temp
@@ -55,7 +55,7 @@ public enum ESUSoundType : Int, CaseIterable, Sendable {
     return nil
   }
 
-  init(cv57:UInt8, cv58:UInt8) {
+  public init(cv57:UInt8, cv58:UInt8) {
     if cv57 == 0 && cv58 == 0 {
       self = .dieselHydraulical
     }

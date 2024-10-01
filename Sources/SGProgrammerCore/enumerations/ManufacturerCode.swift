@@ -203,7 +203,7 @@ public enum ManufacturerCode : UInt16, CaseIterable, Codable, Sendable {
   
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ManufacturerCode.allCases {
       if temp.title == title {
         self = temp
