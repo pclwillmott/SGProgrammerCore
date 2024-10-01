@@ -106,13 +106,13 @@ public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
       .manualCVInput : .wrench,
     ]
     
-    let button = icons[self]!.button(target: nil, action: nil)!
-    button.toolTip = title
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.isBordered = false
-    button.tag = self.rawValue
+    let button = icons[self]!.button(target: nil, action: nil)
+    button?.toolTip = title
+    button?.translatesAutoresizingMaskIntoConstraints = false
+    button?.isBordered = false
+    button?.tag = self.rawValue
     
-    return button
+    return button ?? NSButton()
     
   }
   
