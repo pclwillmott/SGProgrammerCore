@@ -2775,14 +2775,14 @@ public enum CV : UInt64, CaseIterable, Codable, Sendable {
   
   // MARK: Constructors
   
-  init?(cv31:UInt8, cv32:UInt8, cv:UInt16, indexMethod:CVIndexMethod) {
+  public init?(cv31:UInt8, cv32:UInt8, cv:UInt16, indexMethod:CVIndexMethod) {
     guard let cv = CV(rawValue: CV.encodeRawValue(cv31: cv31, cv32: cv32, cv: cv, indexMethod: indexMethod)) else {
       return nil
     }
     self = cv
   }
   
-  init?(index:UInt16, cv:UInt16, indexMethod:CVIndexMethod) {
+  public init?(index:UInt16, cv:UInt16, indexMethod:CVIndexMethod) {
     guard let cv = CV(rawValue: CV.encodeRawValue(cv31: UInt8(index >> 8), cv32: UInt8(index & 0xff), cv: cv, indexMethod: indexMethod)) else {
       return nil
     }
