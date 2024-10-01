@@ -112,7 +112,7 @@ public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
     button?.isBordered = false
     button?.tag = self.rawValue
     
-    return button ?? NSButton()
+    return button ?? NSButton(title: self.rawValue, target: nil, action: nil)
     
   }
   
