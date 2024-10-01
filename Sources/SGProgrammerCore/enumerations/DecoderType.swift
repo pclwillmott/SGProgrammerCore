@@ -184,7 +184,7 @@ public enum DecoderType : UInt64, Codable, CaseIterable, Sendable {
 
   // MARK: Constructors
   
-  @MainActor init?(esuProductId:UInt32) {
+  @MainActor public init?(esuProductId:UInt32) {
     guard let id = DecoderType.esuProductIdLookup[esuProductId] else {
       return nil
     }
@@ -193,7 +193,7 @@ public enum DecoderType : UInt64, Codable, CaseIterable, Sendable {
   
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in DecoderType.allCases {
       if temp.title == title {
         self = temp
