@@ -36,15 +36,15 @@ import Foundation
 
 public struct DecoderDefinition : Codable {
   
-  var decoderType        : DecoderType
-  var firmwareVersion    : [[Int]]
-  var esuProductIds      : [UInt32]
-  var cvs                : [CV]
-  var defaultValues      : [UInt8]
-  var mapping            : [Int:Set<CV>]
-  var properties         : Set<ProgrammerToolSettingsProperty>
-  var esuPhysicalOutputs : Set<ESUDecoderPhysicalOutput>
-  var offsetMethod       : ESUPhysicalOutputCVIndexOffsetMethod
-  var esuOutputModes     : [ESUDecoderPhysicalOutput:Set<ESUPhysicalOutputMode>]
+  public var decoderType        : DecoderType
+  public var firmwareVersion    : [[Int]]
+  public var esuProductIds      : [UInt32]
+  public var cvs                : [CV]
+  public var defaultValues      : [UInt8]
+  public var mapping            : [Int:Set<CV>]
+  public var properties         : Set<ProgrammerToolSettingsProperty>
+  public var esuPhysicalOutputs : Set<ESUDecoderPhysicalOutput>
+  public var offsetMethod       : ESUPhysicalOutputCVIndexOffsetMethod
+  public var esuOutputModes     : [ESUDecoderPhysicalOutput:Set<ESUPhysicalOutputMode>]
   
 }

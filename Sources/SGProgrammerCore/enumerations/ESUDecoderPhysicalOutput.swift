@@ -68,7 +68,7 @@ public enum ESUDecoderPhysicalOutput : UInt8, CaseIterable, Codable, Sendable {
 
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUDecoderPhysicalOutput.allCases {
       if temp.title == title {
         self = temp
