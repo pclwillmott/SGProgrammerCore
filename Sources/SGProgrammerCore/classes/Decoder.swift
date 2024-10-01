@@ -45,7 +45,7 @@ public class Decoder : NSObject {
   
   // MARK: Constructors & Destructors
   
-  @MainActor init(decoderType:DecoderType) {
+  @MainActor public init(decoderType:DecoderType) {
     
     self._decoderType = decoderType
     
