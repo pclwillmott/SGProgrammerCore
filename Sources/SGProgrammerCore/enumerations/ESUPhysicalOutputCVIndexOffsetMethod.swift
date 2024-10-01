@@ -44,7 +44,7 @@ public enum ESUPhysicalOutputCVIndexOffsetMethod : Int, Codable, CaseIterable, S
   
   // MARK: Constructors
   
-  init?(title:String) {
+  public init?(title:String) {
     for temp in ESUPhysicalOutputCVIndexOffsetMethod.allCases {
       if temp.title == title {
         self = temp
