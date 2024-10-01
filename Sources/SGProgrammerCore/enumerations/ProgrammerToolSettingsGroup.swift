@@ -84,7 +84,6 @@ public enum ProgrammerToolSettingsGroup : Int, CaseIterable, Sendable {
 
   }
   
-  @available(macOS 13.0, *)
   @MainActor public var button : NSButton {
     
     let icons : [ProgrammerToolSettingsGroup:SGIcon] = [

@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SGProgrammerCore",
     defaultLocalization: "en-GB",
-    platforms: [.macOS(.v12)],
+    platforms: [.macOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(

@@ -40,9 +40,9 @@ public class PTSettingsPropertyView : NSView, NSTextFieldDelegate {
   
   deinit {
     
-    NSLayoutConstraint.deactivate(viewConstraints)
+//    NSLayoutConstraint.deactivate(viewConstraints)
     
-    viewConstraints.removeAll()
+//    viewConstraints.removeAll()
     
 //    self.subviews.removeAll()
     

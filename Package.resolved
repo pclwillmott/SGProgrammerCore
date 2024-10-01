@@ -1,13 +1,13 @@
 {
-  "originHash" : "5959ec6aae0b58aa82d6f1f96b545d8cef14567410aaa28dc062cb3354f0cc15",
+  "originHash" : "7b34e37a7f428bec9b869f1956aadf3df87017214d6eebe4624a7f9855726aa7",
   "pins" : [
     {
       "identity" : "sgappkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pclwillmott/SGAppKit",
       "state" : {
-        "revision" : "c3bf9623e6f16fcae0ebf3099564545df851fbf5",
-        "version" : "0.0.6"
+        "revision" : "504c414ab2533469be89aecae7392cee2697e4a4",
+        "version" : "0.0.12"
       }
     },
     {

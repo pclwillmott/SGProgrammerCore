@@ -1121,7 +1121,8 @@ public class Decoder : NSObject {
     case .dword:
       newValues.append(contentsOf: UInt32(string)!.bigEndianData.reversed())
     case .zString:
-      newValues = [UInt8](string.padWithNull(length: 29).prefix(28))
+      newValues = [UInt8](string.prefix(Int(definition.maxValue!)).utf8)
+      newValues += [UInt8](repeating: 0, count: Int(definition.maxValue!) - newValues.count)
     case .locomotiveAddressType:
       newValues.append(LocomotiveAddressType(title: string) == .extended ? definition.mask![0] : 0)
     case .extendedAddress:
